@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agri Products Store</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 250px;
+      margin: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .price {
+      color: #4CAF50;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+
+
+
+</head>
+<body>
+  <header>
+    <h1>🌾GAWANDE Ago Agency</h1>
+  </header>
+
+  <div class="container" id="product-list">
+    <!-- Products will be injected here -->
+  </div>
+
+
+
+  <script>
+    // Sample product data
+    const products = [
+      { name: "Ampligo", price: "₹6500 /Liter", image: "https://agriplexindia.com/cdn/shop/products/Ampligo.png?v=1743242019" },
+      { name: "Amistar Top", price: "₹4000 / liter", image: "https://www.kisanshop.in/uploads/syngenta-amistar-top-fungicide-500-ml.webp" },
+      { name: "Quantis", price: "₹850 / liter", image: "https://cdn.shopify.com/s/files/1/0722/2059/files/quantis-biostimulant-file-20265.jpg?v=1747131730" },
+      { name: "Evicent", price: "₹650 /24 gm", image: "https://www.kisanshop.in/uploads/syngenta-evicent-insecticide-24-gm.webp" },
+      { name: "Isabion", price: "₹1450 / liter", image: "https://cdn.shopify.com/s/files/1/0722/2059/files/isabion-insecticide-file-3979.png?v=1737428694" },
+      { name: "Plesiva", price: "₹5200 /liter", image: "https://cdn.shopify.com/s/files/1/0722/2059/files/plesiva-insecticide-file-14401.webp?v=1737478111" },
+      { name: "Simodis", price: "₹1950 /240 ml", image: "https://cdn.shopify.com/s/files/1/0722/2059/files/simodis-insecticide-file-13513.jpg?v=1737448652" },
+      { name: "Alika", price: "₹2400 / liter", image: "https://cdn.shopify.com/s/files/1/0722/2059/files/alika-insecticide-file-3969.webp?v=1737470659" },
+      { name: "Crusier", price: "₹1550 / liter", image: "https://dujjhct8zer0r.cloudfront.net/media/prod_image/3953295051761388086.jpg" },
+
+    ];
+
+    // Render products dynamically
+    const productList = document.getElementById("product-list");
+    products.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${p.image}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p class="price">${p.price}</p>
+      `;
+      productList.appendChild(card);
+    });
+  </script>
+</body>
+</html>
